@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">MecFoundation</string>
+
+
+
+    <!-- Login Fragment -->
+    <string name="fragmentLogin_loginButton">Giriş Yap</string>
+    <string name="fragmentLogin_mail">E-posta</string>
+    <string name="fragmentLogin_password">Şifre</string>
+    <string name="fragmentLogin_deneme">deneme</string>
+
+
+    <!-- Query Fragment -->
+    <string name="fragmentQuery_questioningButton">Sorgula</string>
+    <string name="fragmentQuery_id">T.C. No:</string>
+
+
+    <!-- Purchase Fragment -->
+    <string name="fragmentPurchase_name">İsim</string>
+    <string name="fragmentPurchase_surname">Soyisim</string>
+    <string name="fragmentPurchase_accept">Onayla</string>
+
+
+    <!-- Pup-Up Dialogue -->
+    <string name="fragmentDialogue_confirmationQuestion">Onaylıyor musunuz?</string>
+    <string name="fragmentDialogue_yesButton">Evet</string>
+    <string name="fragmentDialogue_noButton">Hayır</string>
+
+
+
+
+
+
+</resources>
