@@ -1,34 +1,58 @@
 <resources>
-    <string name="app_name">MecFoundation</string>
-
+    <string name="app_name">Mec Kurban Yönetim</string>
 
 
     <!-- Login Fragment -->
     <string name="fragmentLogin_loginButton">Giriş Yap</string>
-    <string name="fragmentLogin_mail">E-posta</string>
+    <string name="fragmentLogin_user_name">Kullanıcı Adı</string>
     <string name="fragmentLogin_password">Şifre</string>
-    <string name="fragmentLogin_deneme">deneme</string>
+    <string name="fragmentLogin_deneme">42354326212</string>
 
 
     <!-- Query Fragment -->
     <string name="fragmentQuery_questioningButton">Sorgula</string>
     <string name="fragmentQuery_id">T.C. No:</string>
+    <string name="fragmentQuery_title">Sorgulama Ekranı</string>
+    <string name="fragmentQuery_signTitle">Dağıtıcı İmzası</string>
 
 
     <!-- Purchase Fragment -->
     <string name="fragmentPurchase_name">İsim</string>
     <string name="fragmentPurchase_surname">Soyisim</string>
     <string name="fragmentPurchase_accept">Onayla</string>
+    <string name="fragmentPurchase_title">Dağıtım Ekranı</string>
+    <string name="fragmentPurchase_buttonTitle">Dağıtım Ver</string>
+    <string name="fragmentPurchase_id">T.C. No :</string>
+    <string name="fragmentPurchase_buyNumber">1</string>
+    <string name="fragmentPurchase_show">Listeyi Göster</string>
 
 
     <!-- Pup-Up Dialogue -->
-    <string name="fragmentDialogue_confirmationQuestion">Onaylıyor musunuz?</string>
+    <string name="fragmentDialogue_confirmationQuestion">İşlemi onaylıyor musunuz?</string>
     <string name="fragmentDialogue_yesButton">Evet</string>
     <string name="fragmentDialogue_noButton">Hayır</string>
+    <string name="fragmentDialogue_accept">Onayla</string>
+    <string name="fragmentDialogue_dontAccept">Vazgeç</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="delete_confirm_desc">Silmek istediğinize emin misiniz?</string>
+    <string name="list_title">Dağıtım Yapılan Kişiler</string>
+
+    <!-- List Fragment -->
+    <string name="txt_name_listFragment">İsim-Soyisim</string>
+    <string name="txt_packageCount_countText">Miktar</string>
+    <string name="txt_packageCount_listFragment">Hisse Sayı</string>
+    <string name="txt_packageCount_clear">Temizle</string>
+    <string name="txt_packageCount_sign">İmza Al</string>
+    <string name="txt_packageCount_signAdd">İmza Ekle</string>
 
 
-
-
+    <!-- Password Reset Fragment -->
+    <string name="txt_passwordResetFragment_title">Şifre Değiştir</string>
+    <string name="txt_passwordResetFragment_oldPassword">Eski Şifre</string>
+    <string name="txt_passwordResetFragment_newPassword">Yeni Şifre</string>
+    <string name="txt_passwordResetFragment_newSecondPassword">Tekrar Yeni Şifre</string>
+    <string name="btn_passwordResetFragment_newSecondPassword">Şifreyi Değiştir</string>
+    <string name="btn_passwordResetFragment_passwordHelper">Büyük harf, küçük harf ve rakam içerbilir, en az 4 en fazla 8 karakter içerebilir.</string>
 
 
 </resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="3dp"
+    app:strokeColor="@color/gray_20"
+    app:strokeWidth="1dp"
+    android:background="@color/white"
+    app:cardCornerRadius="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="2dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/rl_listItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_list_tcTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@string/fragmentPurchase_id"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_list_tc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="center"
+                    android:text="@string/txt_name_listFragment"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_list_fullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:text="@string/txt_name_listFragment"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_list_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:text="@string/txt_name_listFragment"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_divider"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@id/txt_list_count"
+            android:layout_alignTop="@id/txt_list_countTxt"
+            android:layout_alignBottom="@id/txt_list_count"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_list_countTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@id/view_divider_delete"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/txt_packageCount_countText"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_list_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/txt_list_countTxt"
+            android:layout_alignStart="@id/txt_list_countTxt"
+            android:layout_below="@id/txt_list_countTxt"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/txt_packageCount_listFragment"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/view_divider_delete"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_divider"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/img_list_delete"
+            android:layout_alignTop="@id/txt_list_countTxt"
+            android:layout_alignBottom="@id/txt_list_count"/>
+
+        <ImageView
+            android:id="@+id/img_list_delete"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="1dp"
+            android:src="@drawable/ic_delete"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

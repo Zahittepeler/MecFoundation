@@ -1,14 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.fragment.PurchaseFragment">
+    android:background="@drawable/ic_mec_background_second"
+    tools:context=".fragment.purchase.PurchaseFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ImageView
+        android:id="@+id/img_purchase_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Text" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:background="@color/white"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardview_claoyut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_login_bigTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="@string/fragmentPurchase_title"
+                android:textColor="@color/interface_pink"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_login_bigTitle">
+
+
+                <androidx.appcompat.widget.AppCompatCheckedTextView
+                    android:id="@+id/txt_fragmentPurchase_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/black"
+                    android:text="@string/fragmentPurchase_id" />
+
+
+                <androidx.appcompat.widget.AppCompatCheckedTextView
+                    android:id="@+id/txt_fragmentPurchase_tcId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    tools:text="@string/fragmentLogin_deneme"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/txt_fragmentPurchase_name"
+                    app:layout_constraintTop_toTopOf="@id/txt_fragmentPurchase_name" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_login_FieldName"
+                style="@style/TextInputLayout.Primary3.15.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="18dp"
+                android:hint="@string/fragmentPurchase_name"
+                android:theme="@style/TextAppearance.App.Cursor"
+                app:layout_constraintTop_toBottomOf="@id/id">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_login_name"
+                    style="@style/TextAppearance.App.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_login_surname"
+                style="@style/TextInputLayout.Primary3.15.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="34dp"
+                android:hint="@string/fragmentPurchase_surname"
+                android:theme="@style/TextAppearance.App.Cursor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_login_FieldName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_login_surname"
+                    style="@style/TextAppearance.App.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_purchase_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view">
+
+
+        <ImageView
+            android:id="@+id/minus"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/ic_sour"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/variable"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/fragmentPurchase_buyNumber"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toBottomOf="@+id/minus"
+            app:layout_constraintEnd_toStartOf="@+id/pluse"
+            app:layout_constraintStart_toEndOf="@+id/minus"
+            app:layout_constraintTop_toTopOf="@+id/minus" />
+
+
+        <ImageView
+            android:id="@+id/pluse"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/ic_plus"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_purchase_buy"
+            style="@style/TextView.Style12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="68dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/fragmentPurchase_buttonTitle"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pluse"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_purchase_showList"
+        style="@style/TextView.Style12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/fragmentPurchase_show"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/cl_purchase_counter"
+        app:layout_constraintStart_toStartOf="@+id/cl_purchase_counter"
+        app:layout_constraintTop_toBottomOf="@+id/cl_purchase_counter" />
+-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

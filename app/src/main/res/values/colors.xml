@@ -27,8 +27,10 @@
     <color name="interface_dark">#0A1922</color>
     <color name="interface_sky_blue">#2983B2</color>
     <color name="interface_midnight_blue">#2983B2</color>
+    <color name="TRANSPARENT">#26FFFFFF</color>
 
     <color name="black_10">#1A020202</color>
+    <color name="gray_20">#33878787</color>
 
 
 

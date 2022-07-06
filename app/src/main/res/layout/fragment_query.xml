@@ -5,8 +5,8 @@
     android:id="@+id/query_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.fragment.QueryFragment"
-    android:background="@drawable/ic_mec_background">
+    tools:context=".fragment.QueryFragment"
+    android:background="@drawable/ic_mec_background_second">
 
 
     <androidx.cardview.widget.CardView
@@ -14,17 +14,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@color/white"
         android:layout_marginHorizontal="30dp"
         app:cardCornerRadius="15dp"
-        android:layout_marginTop="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cardview_claoyut"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_login_bigTitle"
@@ -33,8 +36,8 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto_bold"
                 android:gravity="center"
-                android:text="@string/fragmentLogin_loginButton"
-                android:textColor="@color/black"
+                android:text="@string/fragmentQuery_title"
+                android:textColor="@color/interface_pink"
                 android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +52,9 @@
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="18dp"
-                android:hint="@string/fragmentLogin_mail"
+                android:hint="@string/fragmentQuery_id"
+                app:counterEnabled="true"
+                app:counterMaxLength="11"
                 android:theme="@style/TextAppearance.App.Cursor"
                 app:layout_constraintTop_toBottomOf="@id/txt_login_bigTitle">
 
@@ -58,54 +63,41 @@
                     style="@style/TextAppearance.App.EditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:singleLine="true" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_login_FieldPassword"
-                style="@style/TextInputLayout.Primary3.15.Outlined"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="18dp"
-                android:hint="@string/fragmentLogin_password"
-                android:theme="@style/TextAppearance.App.Cursor"
-                app:counterTextColor="@color/transparent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_login_FieldEmail"
-                app:passwordToggleDrawable="@drawable/selector_password_toggle"
-                app:passwordToggleEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_login_password"
-                    style="@style/TextAppearance.App.EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true" />
-
 
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_login_enter"
-                style="@style/TextView.Style5"
+                style="@style/TextView.Style12"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="68dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:gravity="center"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:text="@string/fragmentLogin_loginButton"
+                android:text="@string/fragmentQuery_questioningButton"
                 app:cornerRadius="12dp"
                 android:layout_marginBottom="20dp"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_login_FieldPassword" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_login_FieldEmail" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_purchase_showList"
+                style="@style/TextView.Style12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/fragmentPurchase_show"
+                android:textAllCaps="false"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_login_enter"
+                app:layout_constraintStart_toStartOf="@+id/btn_login_enter"
+                app:layout_constraintTop_toBottomOf="@+id/btn_login_enter" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

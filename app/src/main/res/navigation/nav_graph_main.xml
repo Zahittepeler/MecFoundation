@@ -7,16 +7,86 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.erlab.mecfoundation.activities.fragment.LoginFragment"
+        android:name="com.halasteknoloji.meckurbanyonetim.fragment.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_queryFragment"
             app:destination="@id/queryFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_passwordResetFragment"
+            app:destination="@id/passwordResetFragment" />
     </fragment>
     <fragment
         android:id="@+id/queryFragment"
-        android:name="com.erlab.mecfoundation.activities.fragment.QueryFragment"
+        android:name="com.halasteknoloji.meckurbanyonetim.fragment.QueryFragment"
         android:label="fragment_query"
-        tools:layout="@layout/fragment_query" />
+        tools:layout="@layout/fragment_query" >
+        <action
+            android:id="@+id/action_queryFragment_to_purchaseFragment"
+            app:destination="@id/purchaseFragment" />
+        <argument
+            android:name="volunteerID"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="city"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="volunteerFullName"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_queryFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/purchaseFragment"
+        android:name="com.halasteknoloji.meckurbanyonetim.fragment.purchase.PurchaseFragment"
+        android:label="fragment_purchase"
+        tools:layout="@layout/fragment_purchase" >
+        <argument
+            android:name="userId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="volunteerID"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="city"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="volunteerFullName"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_purchaseFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.halasteknoloji.meckurbanyonetim.fragment.List.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <argument
+            android:name="VolunteerID"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/passwordResetFragment"
+        android:name="com.halasteknoloji.meckurbanyonetim.fragment.passwordReset.PasswordResetFragment"
+        android:label="fragment_password_reset"
+        tools:layout="@layout/fragment_password_reset" >
+        <argument
+            android:name="volunteerID"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>
