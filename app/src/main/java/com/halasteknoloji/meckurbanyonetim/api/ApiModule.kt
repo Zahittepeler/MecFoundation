@@ -18,7 +18,8 @@ object ApiModule {
     private var client: OkHttpClient? = null
     private var moshiConverterFactory: MoshiConverterFactory? = null
     private var retrofit: Retrofit? = null
-    private val BASE_URL: String = "https://qurbanpanel.ngcloudmedia.com/"
+    //private val BASE_URL: String = "https://qurbanpanel.ngcloudmedia.com/" //locale
+    private val BASE_URL: String = "https://kmanage.mec.org.tr/"  //product
     var cookieHandler: CookieHandler = CookieManager()
 
 

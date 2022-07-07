@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.halasteknoloji.meckurbanyonetim.models.ResponseStatus
@@ -45,6 +47,10 @@ class ListFragment : Fragment() {
 
         binding?.imgListClose?.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        binding?.swipeRefreshList?.setOnRefreshListener {
+            getList()
         }
 
         getList()
@@ -94,6 +100,7 @@ class ListFragment : Fragment() {
 
     private fun getList() {
         listViewModel.getList(volunteerId).observe(viewLifecycleOwner) {
+            binding?.swipeRefreshList?.isRefreshing = false
             it?.let { globalResponse ->
                 when (globalResponse.status) {
 
@@ -102,8 +109,13 @@ class ListFragment : Fragment() {
 
                             if (it != null && it.isNotEmpty()) {
 
+                                binding?.txtListWarn?.isGone = true
+                                binding?.rcList?.isVisible= true
                                 listViewModel.addData(it.reversed().toMutableList())
 
+                            } else {
+                                binding?.txtListWarn?.isVisible = true
+                                binding?.rcList?.isGone = true
                             }
 
                         }

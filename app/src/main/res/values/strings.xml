@@ -36,6 +36,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="delete_confirm_desc">Silmek istediğinize emin misiniz?</string>
     <string name="list_title">Dağıtım Yapılan Kişiler</string>
+    <string name="list_warning">Dağıtım Bulunamadı.</string>
+    <string name="create_sign">İmza Oluştur</string>
+    <string name="create_sign_button">İmzamı Kaydet</string>
+    <string name="create_sign_desc">*Dağıtım süreçlerinde oluşturulan makbuz bilgisibed kullanılmak üzere, imza oluşturmanız gerekmektedir. İmza oluşturulmadan uygulama kullanımınıza izin verilmeyecektir.</string>
 
     <!-- List Fragment -->
     <string name="txt_name_listFragment">İsim-Soyisim</string>

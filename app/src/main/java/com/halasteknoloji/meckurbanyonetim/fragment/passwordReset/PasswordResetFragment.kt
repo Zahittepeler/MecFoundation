@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.halasteknoloji.meckurbanyonetim.R
 import com.halasteknoloji.meckurbanyonetim.databinding.FragmentPasswordResetBinding
 import com.halasteknoloji.meckurbanyonetim.models.ResponseStatus
+import com.halasteknoloji.meckurbanyonetim.utils.LocalDataManager
 import java.util.*
 import java.util.regex.Pattern
 
@@ -68,6 +69,7 @@ class PasswordResetFragment : Fragment() {
                         globalResponse.data?.let {
 
                             if (it.Message.toString().equals("OK")) {
+                                LocalDataManager.setPreferences("UserPassword", null)
                                 findNavController().popBackStack()
                             }  else {
                                 Toast.makeText(

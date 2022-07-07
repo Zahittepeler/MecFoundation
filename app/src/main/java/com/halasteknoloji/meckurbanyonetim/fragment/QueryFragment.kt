@@ -1,21 +1,27 @@
 package com.halasteknoloji.meckurbanyonetim.fragment
 
 import android.Manifest
+import android.content.DialogInterface
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.halasteknoloji.meckurbanyonetim.R
 import com.halasteknoloji.meckurbanyonetim.activities.hasPermission
 import com.halasteknoloji.meckurbanyonetim.activities.showSoftKeyboard
 import com.halasteknoloji.meckurbanyonetim.databinding.FragmentQueryBinding
+
 
 class QueryFragment : Fragment() {
 
@@ -37,12 +43,7 @@ class QueryFragment : Fragment() {
             }.lastOrNull().also {
 
                 if (it != false) {
-
-                    Toast.makeText(
-                        requireContext(),
-                        "Lütfen Konum İzni Veriniz.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    showAlertDialog()
                 } else {
 
                     findNavController().navigate(
@@ -137,6 +138,31 @@ class QueryFragment : Fragment() {
 
         return binding?.root
 
+    }
+
+
+    private fun showAlertDialog() {
+
+        var dialogBuilder: AlertDialog.Builder? = AlertDialog.Builder(requireContext())
+        var alert: AlertDialog?
+        dialogBuilder?.setMessage("Uygulamayı kullanmaya devam etmek için konum erişimine izin vermeniz gerekmektedir.")
+            ?.setCancelable(false)
+            ?.setPositiveButton("Ayarlara Git") { dialog, id ->
+
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                val uri: Uri = Uri.fromParts("package", requireContext().packageName, null)
+                intent.data = uri
+                startActivity(intent)
+
+            }
+            ?.setNegativeButton("Kapat") { dialog, _ ->
+                dialog.cancel()
+                dialogBuilder = null
+                alert = null
+            }
+
+        alert = dialogBuilder?.create()
+        alert?.show()
     }
 
 }

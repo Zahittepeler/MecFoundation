@@ -29,35 +29,23 @@ class LoginFragment : Fragment() {
 
     private val loginViewModel: LoginViewModel by viewModels()
 
-    private val requestPermissionLauncher =
-        registerForActivityResult(
-            ActivityResultContracts.RequestMultiplePermissions()
-        ) {
-            it.map {
-
-                it.value == false
-
-            }.lastOrNull().also {
-
-                if (it != false) {
-
-                    Toast.makeText(
-                        requireContext(),
-                        "Lütfen Konum İzni Veriniz.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-
-            }
-        }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+        val userName = LocalDataManager.getPreferencesStrVal("UserName")
+        val userPassword = LocalDataManager.getPreferencesStrVal("UserPassword")
+
+        if (userName != null) {
+            binding?.edtLoginEmail?.setText(userName)
+        }
+
+        if (userPassword != null) {
+            binding?.edtLoginPassword?.setText(userPassword)
+        }
 
         binding?.edtLoginEmail?.requestFocus()
         binding?.edtLoginEmail?.let { showSoftKeyboard(it, requireContext()) }
@@ -80,21 +68,6 @@ class LoginFragment : Fragment() {
         return binding?.root
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        val hasPermission = requireContext().hasPermission()
-
-        if (!hasPermission) {
-            requestPermissionLauncher.launch(
-                arrayOf(
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-                )
-            )
-        }
-    }
-
 
     private fun loginUser(UserName: String?, Password: String?) {
         loginViewModel.loginUser(UserName, Password).observe(viewLifecycleOwner) {
@@ -107,7 +80,7 @@ class LoginFragment : Fragment() {
                             if (it.Id != null && it.ChangePassword == false) {
 
 
-                                    SignFragment(onSubmitClickListener = { dialogF, bitmap ->
+                                    SignFragment(true, onSubmitClickListener = { dialogF, bitmap ->
 
                                         if (bitmap != null) {
                                             val emptyBitmap = Bitmap.createBitmap(
@@ -121,6 +94,9 @@ class LoginFragment : Fragment() {
                                                     it.Id.toString(),
                                                     getBase64BitmapPNG(bitmap)
                                                 )
+
+                                                LocalDataManager.setPreferences("UserName", UserName)
+                                                LocalDataManager.setPreferences("UserPassword", Password)
 
                                                 findNavController().navigate(
                                                     R.id.action_loginFragment_to_queryFragment,

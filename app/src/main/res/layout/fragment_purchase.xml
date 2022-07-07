@@ -183,7 +183,6 @@
             style="@style/TextView.Style12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="68dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
@@ -191,13 +190,13 @@
             android:insetBottom="0dp"
             android:text="@string/fragmentPurchase_buttonTitle"
             android:textAllCaps="false"
-            android:textSize="12sp"
+            android:textSize="18sp"
             app:cornerRadius="12dp"
+            android:minWidth="250dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pluse"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/pluse" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

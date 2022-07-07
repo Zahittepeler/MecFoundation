@@ -154,6 +154,11 @@ class PurchaseFragment : Fragment() {
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 } else if(it.Message != null && it.Message == "OK") {
+                                    Toast.makeText(
+                                        requireContext(),
+                                        "Dağıtım bilgisi başarıyla alındı.",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                     requireActivity().onBackPressed()
                                 }
 
@@ -215,6 +220,11 @@ class PurchaseFragment : Fragment() {
                 ).show()
             }
         }
+       /*
+        0.7020602218700475 - 443 - 631
+        0.702991452991453 - 658 -936
+
+        */
     }
 
 
